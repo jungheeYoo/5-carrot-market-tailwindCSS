@@ -92,27 +92,49 @@
 //   );
 // }
 
-//////////////////////////////////////////////////
-// ✅ 3-4. Tailwind Variables
-// 검색창 컴포넌트 구현
-// input 스타일 꾸미기
-// focus, active state
-// ring class
-// 가상 요소 선택 (placeholder 같은 것..)
+// //////////////////////////////////////////////////
+// // ✅ 3-4. Tailwind Variables
+// // 검색창 컴포넌트 구현
+// // input 스타일 꾸미기
+// // focus, active state
+// // ring class
+// // 가상 요소 선택 (placeholder 같은 것..)
 
-// ✨ Tailwind 에는 변수를 지정하는 class 타입도 존재한다.
-// 마우스 올렸을 때 --tw 라고 적힌 것을 본다면 대부분의 경우 직접 조정할 수 있다
+// // ✨ Tailwind 에는 변수를 지정하는 class 타입도 존재한다.
+// // 마우스 올렸을 때 --tw 라고 적힌 것을 본다면 대부분의 경우 직접 조정할 수 있다
+
+// export default function Home() {
+//   return (
+//     <main className="bg-gray-100 h-screen flex items-center justify-center p-5 ">
+//       <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2">
+//         <input
+//           className="w-full rounded-full h-12 bg-gray-200 pl-5 outline-none ring ring-transparent focus:ring-orange-500 focus:ring-offset-2 transition-shadow placeholder:drop-shadow"
+//           type="text"
+//           placeholder="Search here..."
+//         />
+//         <button className="bg-black text-white py-2 rounded-full active:scale-90 focus:scale-90 transition-transform font-medium outline-none">
+//           Search
+//         </button>
+//       </div>
+//     </main>
+//   );
+// }
+
+//////////////////////////////////////////////////
+// ✅ 3-5. Responsive Modifiers
+// 반응형 만들기
+// 사이즈에 따른 배경화면 색상 바꾸면서 반응형 해보기
 
 export default function Home() {
   return (
-    <main className="bg-gray-100 h-screen flex items-center justify-center p-5 ">
-      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2">
+    <main className="bg-gray-100 sm:bg-red-100 md:bg-green-100 lg:bg-cyan-100 xl:bg-orange-100 2xl:bg-purple-100 h-screen flex items-center justify-center p-5 ">
+      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col md:flex-row gap-2">
         <input
           className="w-full rounded-full h-12 bg-gray-200 pl-5 outline-none ring ring-transparent focus:ring-orange-500 focus:ring-offset-2 transition-shadow placeholder:drop-shadow"
           type="text"
           placeholder="Search here..."
         />
-        <button className="bg-black text-white py-2 rounded-full active:scale-90 focus:scale-90 transition-transform font-medium outline-none">
+        <button className="bg-black text-white py-2 rounded-full active:scale-90 focus:scale-90 transition-transform font-medium outline-none md:px-10">
           Search
         </button>
       </div>
