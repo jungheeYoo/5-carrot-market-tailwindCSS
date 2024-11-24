@@ -3,6 +3,79 @@
 // ✅ 3-1. IntelliSense 
 */
 
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* 
+//////////////////////////////////////////////////
+// ✅ 3-11. Directives
+// 컴파일러는 생성된 CSS를 어디에 두느냐?
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+// 여기에 밑줄이 생긴다면 vsCode 에서 tailwind 언어를 선택하면 됨
+*/
+
+/* Tailwind CSS의 Directives라고 부름 */
+/* 컴파일러는 여기로 와서 이 directive 들을 생성된 class name 으로 대체함 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 🔶 base */
+/* 컴파일러가 tailwind와 함께 제공되는 기본적인 reset 및 기본 값 스타일 종류를 두는 곳 */
+/* base styles : tailwind가 생성하는 기본적인 reset 및 기본 값의 일종이다 */
+
+/* 🔶 components */
+/* 나중에.. */
+
+/* 🔶 utilities */
+/* 컴파일러가 생성 된 모든 code를 넣는 placeholder */
+/* utilities directive 안에, 컴파일러는 모든 utility class name 들을 넣음 */
+/* 컴파일러는 이것을 우리가 작성한 모든 class name 으로 대체함 */
+
+/* ///////////////////////////////////////////////////////////// */
+
+/* 🔹 apply directive */
+/* apply 는 이 모든 class name 들을 나의 CSS 코드에서 사용할 수 있게 해줌 */
+/* 이 class name 이 모든 utility class name 을 감싸도록 만들어줌 */
+/* 이건 직접 반복하지 않고 style 을 재사용할 수 있는 옵션 중 하나 */
+/* apply directive를 사용하거나 또 다른 옵션은 별도의 react component로 분리하는 방법도 있음 👍 */
+/* 전부 보통의 CSS로 변환 됨 */
+
+.btn {
+  @apply w-full bg-black h-10 text-white rounded-sexy-name me-tomato;
+}
+
+/* 🔹 layer directive */
+/* layer를 각각 확장할 수 있도록 해줌 */
+/* base style을 추가하고 싶다면 base layer를 확장할 수 있다 */
+/* 또 다른 utility 를 추가하고 싶다면 utility layer 를 확장할 수 있다 */
+/* plugin 을 위해 존재함 */
+/* layer directive 로 apply 를 결합할 수 있다 */
+
+/* application 의 모든 link를 위한 일반적인 style */
+@layer base {
+  a {
+    @apply text-blue-500;
+  }
+}
+
+/* application 의 모든 곳에서 사용할 수 있는 새로운 class */
+@layer utilities {
+  .text-bigger-hello {
+    @apply text-3xl font-semibold;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* 🔶 components */
+/* 많은 class를 감쌀 때를 위한 것 */
+
+/* 버튼을 형성하기 위해 class들을 다같이 추상화하는 컴포넌트 */
+@layer components {
+  .btn {
+    @apply w-full bg-black h-10 text-white rounded-sexy-name mt-tomato;
+  }
+}
